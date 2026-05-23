@@ -1,0 +1,17 @@
+lit mid_list = [5, 1, 8, -1, 6];
+
+cook slide_sort(squad) {
+    grind (lit i = 1; i < squad.length; i++) {
+        lit target_vibe = squad[i]; 
+        lit j = i - 1;
+        doomscroll (j >= 0 && squad[j] > target_vibe) {
+            squad[j + 1] = squad[j];
+            j = j - 1;
+        }
+        squad[j + 1] = target_vibe;
+    }
+}
+
+spill("Chaotic List: " + mid_list);
+slide_sort(mid_list);
+spill("Aesthetic List: " + mid_list);

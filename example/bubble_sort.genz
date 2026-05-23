@@ -1,0 +1,19 @@
+cook vibe_sort(squad) {
+    lit squad_size = squad.length;
+    
+    grind (lit i = 0; i < squad_size - 1; i++) {
+        grind (lit j = 0; j < squad_size - i - 1; j++) {
+            vibecheck (squad[j] > squad[j + 1]) {
+                lit hold_up = squad[j];
+                squad[j] = squad[j + 1];
+                squad[j + 1] = hold_up;
+            }
+        }
+    }
+}
+
+lit mid_list = [3, 4, 1, 2];
+
+spill("Chaotic List (Before): " + mid_list);
+vibe_sort(mid_list);
+spill("A E S T H E T I C List (After): " + mid_list);
