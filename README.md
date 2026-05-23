@@ -17,7 +17,7 @@ Want to run GenzScript natively on your machine? Say less.
 ### 1. Clone the repo
 
 ```bash
-git clone [https://github.com/yourusername/genzscript.git](https://github.com/yourusername/genzscript.git)
+git clone https://github.com/Mizab1/GenzScript.git
 cd genzscript
 ```
 
