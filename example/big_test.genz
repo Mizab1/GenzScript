@@ -1,0 +1,65 @@
+fax MAX_AURA = 1000;
+sus unpredictable_behavior = ghosted;
+
+cook testVibes(energyLevel, zodiac) {
+    lit aura = 0;
+    lit is_valid = L;
+
+    spill("Checking vibes for a " + zodiac + " with energy level " + energyLevel);
+
+    send_it {
+        mood (zodiac) {
+            era "Gemini":
+                spill("Oh nah, too two-faced.");
+                cancel "Toxic trait detected!";
+                dip;
+                
+            era "Leo":
+                aura = aura + 500;
+                spill("Main character energy fr. (+500 aura)");
+                dip;
+                
+            basic:
+                aura = aura + 100;
+                spill("They're just chillin. (+100 aura)");
+        }
+
+        doomscroll (aura < 600) {
+            aura = aura + 50;
+            
+            vibecheck (aura === 300) {
+                spill("Hit 300 aura, skipping a step...");
+                skrrt;
+            }
+        }
+        grind (lit days = 1; days <= 3; days++) {
+            vibecheck (energyLevel > 80) {
+                is_valid = W;
+                spill("Day " + days + ": Vibes be immaculate.");
+                
+            } plot_twist (energyLevel > 50) {
+                spill("Day " + days + ": Vibes be mid.");
+                
+            } or_nah {
+                is_valid = L;
+                spill("Day " + days + ": Down bad. We leaving.");
+                dip;
+            }
+        }
+        
+        spill("Final aura score: " + aura);
+        yeet is_valid;
+
+    } caught_lacking (error) {
+        spill("Big yikes. We caught an error: " + error);
+        yeet L;
+    }
+}
+
+lit final_result = testVibes(90, "Leo");
+
+vibecheck (final_result === W) {
+    spill("RESULT: W! They passed the vibe check No cap.");
+} or_nah {
+    spill("RESULT: Major L. Totally ghosted.");
+}

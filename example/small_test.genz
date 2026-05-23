@@ -1,0 +1,20 @@
+fax targetRizz = 100;
+lit currentRizz = 80;
+
+spill("Starting the rizz calculation...");
+
+cook getRizzedUp(rizz) {
+    grind (lit i = 0; i < 3; i++) {
+        rizz = rizz + 10;
+        spill("Leveling up... Rizz gotta be: " + rizz);
+    }
+    yeet rizz;
+}
+
+currentRizz = getRizzedUp(currentRizz);
+
+vibecheck (currentRizz >= targetRizz) {
+    spill("W! You have enough rizz No cap");
+} or_nah {
+    spill("Thats an L rizz");
+}
