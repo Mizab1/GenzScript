@@ -1,16 +1,24 @@
 {
   "name": "genzscript",
   "version": "1.0.0",
-  "description": "",
-  "main": "transpiler.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A parody programming language powered by Gen Z slang",
+  "main": "language/transpiler.js",
   "bin": {
-    "cook": "./private/transpiler.js"
+    "cook": "./language/transpiler.js"
   },
-  "keywords": [],
+  "keywords": [
+    "genz",
+    "parser",
+    "transpiler",
+    "compiler",
+    "slang"
+  ],
+  "files": [
+    "language/",
+    "example/",
+    "extension",
+    "README.md"
+  ],
   "author": "Mizab Ansari",
-  "license": "ISC",
-  "type": "commonjs"
+  "license": "MIT"
 }

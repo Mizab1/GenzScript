@@ -1,0 +1,38 @@
+name: GenzScript NPM Publisher
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write 
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Configure Git Bot
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Auto-Bump Version
+        run: npm version patch -m "chore: auto-bump version to %s"
+
+      - name: Push new version to GitHub
+        run: git push --follow-tags
+
+      - name: Publish to NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
