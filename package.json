@@ -1,6 +1,6 @@
 {
   "name": "genzscript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A parody programming language powered by Gen Z slang",
   "main": "language/transpiler.js",
   "bin": {
